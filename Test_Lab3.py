@@ -21,18 +21,30 @@ def test_bubble_sort_descending():
 
     assert (result == test_arr)
 
-def test_bubble_sort_more_than_10():
+def test_bubble_sort_invalid():
     result = []
-    input_arr = [64, 34, 25, 12, 22, 11, 90, 130, 450, 123, 111]
+    input_arr = [64, 34, 25, 12, 22, 11, 90]
 
     result = Lab3.bubble_sort(input_arr, 3)
 
-    assert (result == 1)
+    assert (result == [])
 
-def test_bubble_sort_have_non_integer():
-    result = []
-    input_arr = [64, 34, 25, 12, 22, "a", 130]
 
-    result = Lab3.bubble_sort(input_arr, 3)
+def test_bubble_sort_more_than_ten():
+    result=[]
+    input_arr = [12,15,76,34,97,64,43,11,10,6,4]
+    result = Lab3.bubble_sort(input_arr,3)
+    assert(result==1)
 
-    assert (result == 2)
+
+def test_bubble_sort_no_numbers():
+    result=[]
+    input_arr = []
+    result = Lab3.bubble_sort(input_arr,3)
+    assert(result==0)
+
+def test_for_int():
+    result=[]
+    input_arr = [14,764,54,"a","p"]
+    result = Lab3.bubble_sort(input_arr,3)
+    assert(result==2)
